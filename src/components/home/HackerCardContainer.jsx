@@ -16,11 +16,11 @@ const HackerCardContainer = ({ hacker }) => {
       className="border-2 border-gray-500 rounded-lg px-4 py-2 m-4 relative hover:shadow-xl"
     >
       <h2 className="absolute top-1 right-2 px-4 py-1 bg-red-300 rounded-lg">
-        {hacker.status}
+        {hacker.status === 'Monitored' ? 'Monitoring' : 'Removed/Left'}
       </h2>
       <h2 className="absolute top-10 right-2 px-4 py-1 bg-red-300 rounded-lg">
         {' '}
-        {hacker.isHacker}
+        {hacker.isHacker === 'Yes' ? 'Hacker' : 'Prospect Hacker'}
       </h2>
       <div className=" flex justify-start items-center gap-x-2">
         <BsFacebook className="text-red-300 text-2xl" />
