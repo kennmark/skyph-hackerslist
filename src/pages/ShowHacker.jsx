@@ -86,13 +86,13 @@ const ShowHacker = () => {
             <Link to={`/hackers/edit/${hacker._id}`}>
               <span className="flex justify-evenly">
                 <AiOutlineEdit className="text-2xl text-yellow-600 hover:text-black pr-1" />
-                <h2>EDIT</h2>
+                <h5>EDIT</h5>
               </span>
             </Link>
             <Link to={`/hackers/delete/${hacker._id}`}>
               <span className="flex justify-evenly">
                 <MdOutlineDelete className="text-2xl text-red-600 hover:text-black pr-1" />
-                <h2>DELETE</h2>
+                <h5>DELETE</h5>
               </span>
             </Link>
           </div>

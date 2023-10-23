@@ -16,6 +16,7 @@ const Home = () => {
   useEffect(() => {
     setLoading(true)
     axios
+      // .get('http://localhost:5555/hackers/')
       .get('https://skyph-hackerlists-api.onrender.com/hackers')
       .then((response) => {
         setHackers(response.data.data)

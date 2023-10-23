@@ -46,14 +46,14 @@ const CreateHacker = () => {
       <BackButton />
       <h1 className="text-3xl my-4">Create New Hacker</h1>
       {loading ? <Spinner /> : ''}
-      <div className="flex flex-col border-2 border-sky-400 rounded-xl w-[600px] p-4 mx-auto">
+      <div className="flex flex-col border-2 border-sky-700 rounded-xl w-[600px] p-4 mx-auto">
         <div className="my-4">
           <label className="text-xl mr-4 text-gray-500">Facebook</label>
           <input
             type="text"
             value={fbname}
             onChange={(e) => setFbname(e.target.value)}
-            className="border-2 border-gray-500 px-4 py-2 w-full"
+            className="border-2 border-gray-500 px-2 py-2 w-full"
             required
           />
         </div>
@@ -63,7 +63,7 @@ const CreateHacker = () => {
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className="border-2 border-gray-500 px-4 py-2 w-full"
+            className="border-2 border-gray-500 px-2 py-2 w-full"
             required
           />
         </div>
@@ -73,7 +73,7 @@ const CreateHacker = () => {
             type="text"
             value={group}
             onChange={(e) => setGroup(e.target.value)}
-            className="border-2 border-gray-500 px-4 py-2 w-full"
+            className="border-2 border-gray-500 px-2 py-2 w-full"
             required
           />
         </div>
@@ -83,7 +83,7 @@ const CreateHacker = () => {
             type="text"
             value={position}
             onChange={(e) => setPosition(e.target.value)}
-            className="border-2 border-gray-500 px-4 py-2 w-full"
+            className="border-2 border-gray-500 px-2 py-2 w-full"
             required
           />
         </div>

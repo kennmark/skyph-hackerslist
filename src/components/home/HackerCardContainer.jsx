@@ -15,33 +15,33 @@ const HackerCardContainer = ({ hacker }) => {
       key={hacker._id}
       className="border-2 border-gray-500 rounded-lg px-4 py-2 m-4 relative hover:shadow-xl"
     >
-      <h2 className="absolute top-1 right-2 px-4 py-1 bg-red-300 rounded-lg">
+      <h6 className="absolute top-2 right-2 px-4 py-1 bg-red-300 rounded-lg">
         {hacker.status === 'Monitored' ? 'Monitoring' : 'Removed/Left'}
-      </h2>
-      <h2 className="absolute top-10 right-2 px-4 py-1 bg-red-300 rounded-lg">
+      </h6>
+      <h6 className="absolute top-12 right-2 px-4 py-1 bg-red-300 rounded-lg">
         {' '}
         {hacker.isHacker === 'Yes' ? 'Hacker' : 'Prospect Hacker'}
-      </h2>
-      <div className=" flex justify-start items-center gap-x-2">
+      </h6>
+      <div className=" flex justify-start items-center gap-x-2 py-1">
         <BsFacebook className="text-red-300 text-2xl" />
-        <h2 className="my-1">{hacker.fbname}</h2>
+        <h6 className="my-1">{hacker.fbname}</h6>
       </div>
-      <div className=" flex justify-start items-center gap-x-2">
+      <div className=" flex justify-start items-center gap-x-2 py-1">
         <BiSolidGhost className="text-red-300 text-2xl" />
-        <h2 className="my-1">{hacker.username}</h2>
+        <h6 className="my-1">{hacker.username}</h6>
       </div>
-      <div className=" flex justify-start items-center gap-x-2">
+      <div className=" flex justify-start items-center gap-x-2 py-1">
         <BiSolidGroup className="text-red-300 text-2xl" />
-        <h2 className="my-1">{hacker.group}</h2>
+        <h6 className="my-1">{hacker.group}</h6>
       </div>
-      <div className=" flex justify-start items-center gap-x-2">
+      <div className=" flex justify-start items-center gap-x-2 py-1">
         <FaUserInjured className="text-red-300 text-2xl" />
-        <h2 className="my-1">{hacker.position}</h2>
+        <h6 className="my-1">{hacker.position}</h6>
       </div>
-      <div className=" flex justify-start items-center gap-x-2">
+      <div className=" flex justify-start items-center gap-x-2 py-1">
         <BiNotepad className="text-red-300 text-2xl" />
       </div>
-      <div className=" flex justify-start items-center gap-x-2">
+      <div className=" flex justify-start items-center gap-x-2 py-1">
         <p className="my-1">{hacker.comment}</p>
       </div>
       <div className=" flex justify-evenly items-center gap-x-2 mt-4 p-4">

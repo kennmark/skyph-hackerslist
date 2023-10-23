@@ -4,6 +4,7 @@ import { AiOutlineEdit } from 'react-icons/ai'
 import { BsInfoCircle } from 'react-icons/bs'
 import { MdOutlineDelete } from 'react-icons/md'
 import { DownloadTableExcel } from 'react-export-table-to-excel'
+// import { MDBDataTable } from 'mdbreact'
 
 const HackerTable = ({ hackers }) => {
   const tableRef = useRef(null)
@@ -15,31 +16,41 @@ const HackerTable = ({ hackers }) => {
         sheet="hackers"
         currentTableRef={tableRef.current}
       >
-        <button className="bg-green-800 text-white p-2 rounded-lg">
+        <button className="bg-green-800 text-white p-2 rounded-lg my-3">
           {' '}
           Export Excel{' '}
         </button>
       </DownloadTableExcel>
       <table
-        className="table-auto w-full border-separate border-spacing-2"
+        className=" table table-striped table-hover table-responsive table-auto"
         ref={tableRef}
       >
         <thead>
           <tr>
-            <th className="border border-slate-600 rounded-md">No</th>
-            <th className="border border-slate-600 rounded-md">Facebook</th>
-            <th className="border border-slate-600 rounded-md max-md:hidden">
+            <th className="border border-slate-600 rounded-md text-center align-middle">
+              No
+            </th>
+            <th className="border border-slate-600 rounded-md text-center align-middle">
+              Facebook
+            </th>
+            <th className="border border-slate-600 rounded-md text-center align-middle max-md:hidden">
               Username
             </th>
-            <th className="border border-slate-600 rounded-md">Group</th>
-            <th className="border border-slate-600 rounded-md max-md:hidden">
+            <th className="border border-slate-600 rounded-md align-middle text-center">
+              Group
+            </th>
+            <th className="border border-slate-600 rounded-md text-center align-middle max-md:hidden">
               GC Position
             </th>
-            <th className="border border-slate-600 rounded-md max-md:hidden">
+            <th className="border border-slate-600 rounded-md text-center align-middle max-md:hidden">
               Page Status
             </th>
-            <th className="border border-slate-600 rounded-md">Hacker</th>
-            <th className="border border-slate-600 rounded-md">Actions</th>
+            <th className="border border-slate-600 rounded-md text-center align-middle">
+              Hacker
+            </th>
+            <th className="border border-slate-600 rounded-md text-center align-middle">
+              Actions
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -62,22 +73,32 @@ const HackerTable = ({ hackers }) => {
                   {hacker.position}
                 </td>
                 <td
-                  className={`border border-slate-700 rounded-md text-center max-md:hidden ${
-                    hacker.status === 'Removed'
-                      ? 'text-red-500'
-                      : 'text-blue-500'
-                  }`}
+                  className={`border border-slate-700 rounded-md  text-lg text-center max-md:hidden`}
                 >
-                  {hacker.status}
+                  <span
+                    className={`badge  rounded-pill d-inline ${
+                      hacker.status === 'Removed'
+                        ? 'badge-warning'
+                        : 'badge-primary'
+                    }`}
+                  >
+                    {hacker.status}
+                  </span>
                 </td>
                 <td
-                  className={`border border-slate-700 rounded-md text-center ${
-                    hacker.isHacker === 'Yes' ? 'text-red-500' : 'text-blue-500'
-                  } `}
+                  className={`border border-slate-700 rounded-md text-center text-lg`}
                 >
-                  {hacker.isHacker}
+                  <span
+                    className={`badge  rounded-pill d-inline text-2xl ${
+                      hacker.isHacker === 'Yes'
+                        ? 'badge-warning'
+                        : 'badge-primary'
+                    }`}
+                  >
+                    {hacker.isHacker}
+                  </span>
                 </td>
-                <td className="border border-slate-700 rounded-md text-center">
+                <td className="border border-slate-700 rounded-md text-center align-middle">
                   <div className="flex justify-center gap-x-4">
                     <Link to={`/hackers/details/${hacker._id}`}>
                       <BsInfoCircle className="text-2xl text-green-800" />
@@ -95,6 +116,7 @@ const HackerTable = ({ hackers }) => {
           })}
         </tbody>
       </table>
+      {/* <MDBDataTable rows={hackers} /> */}
     </div>
   )
 }
