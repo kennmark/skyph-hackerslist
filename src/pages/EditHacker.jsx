@@ -20,7 +20,7 @@ const EditHacker = () => {
     setLoading(true)
     axios
       // .get(`http://localhost:5555/hackers/${id}`)
-      .get(`https://skyph-hackerlists.onrender.com/${id}`)
+      .get(`https://skyph-hackerlists-api.onrender.com/${id}`)
       .then((response) => {
         setFbname(response.data.fbname)
         setUsername(response.data.username)
@@ -52,7 +52,7 @@ const EditHacker = () => {
     setLoading(true)
     axios
       // .put(`http://localhost:5555/hackers/${id}`, data)
-      .put(`https://skyph-hackerlists.onrender.com/${id}`, data)
+      .put(`https://skyph-hackerlists-api.onrender.com/${id}`, data)
       .then(() => {
         setLoading(false)
         navigate('/')

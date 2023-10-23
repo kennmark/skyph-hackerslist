@@ -16,7 +16,7 @@ const ShowHacker = () => {
     setLoading(true)
     axios
       // .get(`http://localhost:5555/hackers/${id}`)
-      .get(`https://skyph-hackerlists.onrender.com/${id}`)
+      .get(`https://skyph-hackerlists-api.onrender.com/${id}`)
       .then((response) => {
         setHacker(response.data)
         setLoading(false)
