@@ -15,10 +15,22 @@ const HackerCardContainer = ({ hacker }) => {
       key={hacker._id}
       className="border-2 border-gray-500 rounded-lg px-4 py-2 m-4 relative hover:shadow-xl"
     >
-      <h6 className="absolute top-2 right-2 px-4 py-1 bg-red-300 rounded-lg">
+      <h6
+        className={`absolute top-2 right-2 px-2 py-1 rounded-lg ${
+          hacker.status === 'Removed'
+            ? 'badge badge-warning'
+            : 'badge badge-primary'
+        }`}
+      >
         {hacker.status === 'Monitored' ? 'Monitoring' : 'Removed/Left'}
       </h6>
-      <h6 className="absolute top-12 right-2 px-4 py-1 bg-red-300 rounded-lg">
+      <h6
+        className={`absolute top-9 right-2 px-1 py-1 rounded-lg ${
+          hacker.isHacker === 'Yes'
+            ? 'badge badge-warning'
+            : 'badge badge-primary'
+        }`}
+      >
         {' '}
         {hacker.isHacker === 'Yes' ? 'Hacker' : 'Prospect Hacker'}
       </h6>
