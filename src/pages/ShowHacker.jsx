@@ -41,7 +41,7 @@ const ShowHacker = () => {
             </span>
           </div>
           <div className="my-4">
-            <span className="text-xl mr-4 text-gray-500">Username:</span>
+            <span className="text-xl mr-4 text-gray-500">GC Name:</span>
             <span className="text-xl mr-4 text-gray-500 font-bold">
               {hacker.username}
             </span>

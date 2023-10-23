@@ -58,7 +58,7 @@ const CreateHacker = () => {
           />
         </div>
         <div className="my-4">
-          <label className="text-xl mr-4 text-gray-500">Username</label>
+          <label className="text-xl mr-4 text-gray-500">GC Name</label>
           <input
             type="text"
             value={username}

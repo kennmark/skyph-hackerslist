@@ -28,10 +28,16 @@ const HackerTable = ({ hackers }) => {
           <tr>
             <th className="border border-slate-600 rounded-md">No</th>
             <th className="border border-slate-600 rounded-md">Facebook</th>
-            <th className="border border-slate-600 rounded-md">Username</th>
+            <th className="border border-slate-600 rounded-md max-md:hidden">
+              Username
+            </th>
             <th className="border border-slate-600 rounded-md">Group</th>
-            <th className="border border-slate-600 rounded-md">GC Position</th>
-            <th className="border border-slate-600 rounded-md">Page Status</th>
+            <th className="border border-slate-600 rounded-md max-md:hidden">
+              GC Position
+            </th>
+            <th className="border border-slate-600 rounded-md max-md:hidden">
+              Page Status
+            </th>
             <th className="border border-slate-600 rounded-md">Hacker</th>
             <th className="border border-slate-600 rounded-md">Actions</th>
           </tr>
@@ -46,17 +52,17 @@ const HackerTable = ({ hackers }) => {
                 <td className="border border-slate-700 rounded-md text-center">
                   {hacker.fbname}
                 </td>
-                <td className="border border-slate-700 rounded-md text-center">
+                <td className="border border-slate-700 rounded-md text-center max-md:hidden">
                   {hacker.username}
                 </td>
                 <td className="border border-slate-700 rounded-md text-center">
                   {hacker.group}
                 </td>
-                <td className="border border-slate-700 rounded-md text-center">
+                <td className="border border-slate-700 rounded-md text-center max-md:hidden">
                   {hacker.position}
                 </td>
                 <td
-                  className={`border border-slate-700 rounded-md text-center ${
+                  className={`border border-slate-700 rounded-md text-center max-md:hidden ${
                     hacker.status === 'Removed'
                       ? 'text-red-500'
                       : 'text-blue-500'
