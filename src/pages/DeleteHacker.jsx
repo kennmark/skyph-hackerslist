@@ -12,7 +12,8 @@ const DeleteHacker = () => {
   const handleDeleteHacker = () => {
     setLoading(true)
     axios
-      .delete(`http://localhost:5555/hackers/${id}`)
+      // .delete(`http://localhost:5555/hackers/${id}`)
+      .delete(`https://skyph-hackerlists.onrender.com/${id}`)
       .then(() => {
         setLoading(false)
         navigate('/')

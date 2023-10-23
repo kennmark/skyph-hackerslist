@@ -28,7 +28,8 @@ const CreateHacker = () => {
     }
     setLoading(true)
     axios
-      .post('http://localhost:5555/hackers', data)
+      // .post('http://localhost:5555/hackers/hackers', data)
+      .post('https://skyph-hackerlists.onrender.com/hackers', data)
       .then(() => {
         setLoading(false)
         navigate('/')
