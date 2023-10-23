@@ -52,7 +52,7 @@ const EditHacker = () => {
     setLoading(true)
     axios
       // .put(`http://localhost:5555/hackers/${id}`, data)
-      .put(`https://skyph-hackerlists-api.onrender.com/${id}`, data)
+      .put(`https://skyph-hackerlists-api.onrender.com/hackers/${id}`, data)
       .then(() => {
         setLoading(false)
         navigate('/')

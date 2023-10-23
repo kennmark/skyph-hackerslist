@@ -13,7 +13,7 @@ const DeleteHacker = () => {
     setLoading(true)
     axios
       // .delete(`http://localhost:5555/hackers/${id}`)
-      .delete(`https://skyph-hackerlists-api.onrender.com/${id}`)
+      .delete(`https://skyph-hackerlists-api.onrender.com/hackers/${id}`)
       .then(() => {
         setLoading(false)
         navigate('/')
