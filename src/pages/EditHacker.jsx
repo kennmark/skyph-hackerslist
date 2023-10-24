@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
 import BackButton from '../components/BackButton'
 import Spinner from '../components/Spinner'
+import { URI } from '../UriRoute'
 
 const EditHacker = () => {
   const [fbname, setFbname] = useState('')
@@ -19,8 +20,7 @@ const EditHacker = () => {
   useEffect(() => {
     setLoading(true)
     axios
-      // .get(`http://localhost:5555/hackers/${id}`)
-      .get(`https://skyph-hackerlists-api.onrender.com/hackers/${id}`)
+      .get(URI + id)
       .then((response) => {
         setFbname(response.data.fbname)
         setUsername(response.data.username)
@@ -51,8 +51,7 @@ const EditHacker = () => {
     }
     setLoading(true)
     axios
-      // .put(`http://localhost:5555/hackers/${id}`, data)
-      .put(`https://skyph-hackerlists-api.onrender.com/hackers/${id}`, data)
+      .put(URI + id, data)
       .then(() => {
         setLoading(false)
         navigate('/')

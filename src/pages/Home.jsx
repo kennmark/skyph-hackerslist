@@ -7,6 +7,7 @@ import { BsInfoCircle } from 'react-icons/bs'
 import { MdOutlineAddBox, MdOutlineDelete } from 'react-icons/md'
 import HackerCard from '../components/home/HackerCard'
 import HackerTable from '../components/home/HackerTable'
+import { URI } from '../UriRoute'
 
 const Home = () => {
   const [hackers, setHackers] = useState([])
@@ -16,8 +17,7 @@ const Home = () => {
   useEffect(() => {
     setLoading(true)
     axios
-      // .get('http://localhost:5555/hackers/')
-      .get('https://skyph-hackerlists-api.onrender.com/hackers')
+      .get(URI)
       .then((response) => {
         setHackers(response.data.data)
         setLoading(false)

@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
 import BackButton from '../components/BackButton'
 import Spinner from '../components/Spinner'
+import { URI } from '../UriRoute'
 
 const DeleteHacker = () => {
   const [loading, setLoading] = useState(false)
@@ -12,8 +13,7 @@ const DeleteHacker = () => {
   const handleDeleteHacker = () => {
     setLoading(true)
     axios
-      // .delete(`http://localhost:5555/hackers/${id}`)
-      .delete(`https://skyph-hackerlists-api.onrender.com/hackers/${id}`)
+      .delete(URI + id)
       .then(() => {
         setLoading(false)
         navigate('/')

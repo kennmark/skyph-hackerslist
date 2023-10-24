@@ -6,6 +6,7 @@ import Spinner from '../components/Spinner'
 import { Link } from 'react-router-dom'
 import { MdOutlineDelete } from 'react-icons/md'
 import { AiOutlineEdit } from 'react-icons/ai'
+import { URI } from '../UriRoute'
 
 const ShowHacker = () => {
   const [hacker, setHacker] = useState({})
@@ -15,8 +16,7 @@ const ShowHacker = () => {
   useEffect(() => {
     setLoading(true)
     axios
-      // .get(`http://localhost:5555/hackers/${id}`)
-      .get(`https://skyph-hackerlists-api.onrender.com/hackers/${id}`)
+      .get(URI + id)
       .then((response) => {
         setHacker(response.data)
         setLoading(false)

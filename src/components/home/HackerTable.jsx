@@ -3,27 +3,35 @@ import { Link } from 'react-router-dom'
 import { AiOutlineEdit } from 'react-icons/ai'
 import { BsInfoCircle } from 'react-icons/bs'
 import { MdOutlineDelete } from 'react-icons/md'
-import { DownloadTableExcel } from 'react-export-table-to-excel'
+import { CSVLink } from 'react-csv'
 // import { MDBDataTable } from 'mdbreact'
 
 const HackerTable = ({ hackers }) => {
-  const tableRef = useRef(null)
-
+  const headers = [
+    { label: 'Facebook', key: 'fbname' },
+    { label: 'Username', key: 'username' },
+    { label: 'Group', key: 'group' },
+    { label: 'GC Position', key: 'position' },
+    { label: 'Page Status', key: 'status' },
+    { label: 'Hacker?', key: 'isHacker' },
+    { label: 'Remarks', key: 'comment' },
+  ]
   return (
     <div>
-      <DownloadTableExcel
-        filename="skyph-hackerslist"
-        sheet="hackers"
-        currentTableRef={tableRef.current}
-      >
-        <button className="bg-green-800 text-white p-2 rounded-lg my-3">
-          {' '}
-          Export Excel{' '}
-        </button>
-      </DownloadTableExcel>
+      <div className="my-3">
+        <CSVLink
+          data={hackers}
+          headers={headers}
+          filename="skyph-hackerlist"
+          className="bg-green-800 text-white rounded-lg p-2 hover:bg-green-600"
+        >
+          Export CSV
+        </CSVLink>
+      </div>
+
       <table
+        id="report"
         className=" table table-striped table-hover table-responsive table-auto"
-        ref={tableRef}
       >
         <thead>
           <tr>

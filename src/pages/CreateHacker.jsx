@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import BackButton from '../components/BackButton'
 import Spinner from '../components/Spinner'
+import { URI } from '../UriRoute'
 
 const CreateHacker = () => {
   const [fbname, setFbname] = useState('')
@@ -28,8 +29,7 @@ const CreateHacker = () => {
     }
     setLoading(true)
     axios
-      // .post('http://localhost:5555/hackers/hackers', data)
-      .post('https://skyph-hackerlists-api.onrender.com/hackers', data)
+      .post(URI, data)
       .then(() => {
         setLoading(false)
         navigate('/')
