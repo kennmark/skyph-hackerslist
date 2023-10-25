@@ -34,9 +34,16 @@ const HackerCardContainer = ({ hacker }) => {
         {' '}
         {hacker.isHacker === 'Yes' ? 'Hacker' : 'Prospect Hacker'}
       </h6>
-      <div className=" flex justify-start items-center gap-x-2 py-1">
-        <BsFacebook className="text-red-300 text-2xl" />
-        <h6 className="my-1">{hacker.fbname}</h6>
+      <div className=" gap-x-2 py-1">
+        <a
+          href={hacker.fbLink}
+          target="_blank"
+          className=" flex justify-start items-center gap-x-2"
+        >
+          <BsFacebook className="text-red-300 text-2xl" />
+
+          <h6 className="my-1">{hacker.fbname}</h6>
+        </a>
       </div>
       <div className=" flex justify-start items-center gap-x-2 py-1">
         <BiSolidGhost className="text-red-300 text-2xl" />

@@ -1,21 +1,33 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { AiOutlineEdit } from 'react-icons/ai'
 import { BsInfoCircle } from 'react-icons/bs'
 import { MdOutlineDelete } from 'react-icons/md'
 import { CSVLink } from 'react-csv'
-// import { MDBDataTable } from 'mdbreact'
 
 const HackerTable = ({ hackers }) => {
   const headers = [
-    { label: 'Facebook', key: 'fbname' },
-    { label: 'Username', key: 'username' },
-    { label: 'Group', key: 'group' },
-    { label: 'GC Position', key: 'position' },
-    { label: 'Page Status', key: 'status' },
-    { label: 'Hacker?', key: 'isHacker' },
-    { label: 'Remarks', key: 'comment' },
+    { label: 'Facebook', key: 'fbname', field: 'fbname', sort: 'asc' },
+    { label: 'Username', key: 'username', field: 'username', sort: 'asc' },
+    { label: 'Group', key: 'group', field: 'group', sort: 'asc' },
+    { label: 'GC Position', key: 'position', field: 'position', sort: 'asc' },
+    { label: 'Page Status', key: 'status', field: 'status', sort: 'asc' },
+    { label: 'Hacker?', key: 'isHacker', field: 'isHacker', sort: 'asc' },
+    { label: 'Remarks', key: 'comment', field: 'comment', sort: 'asc' },
   ]
+  const data = {
+    columns: [
+      { label: 'Facebook', key: 'fbname', field: 'fbname', sort: 'asc' },
+      { label: 'Username', key: 'username', field: 'username', sort: 'asc' },
+      { label: 'Group', key: 'group', field: 'group', sort: 'asc' },
+      { label: 'GC Position', key: 'position', field: 'position', sort: 'asc' },
+      { label: 'Page Status', key: 'status', field: 'status', sort: 'asc' },
+      { label: 'Hacker?', key: 'isHacker', field: 'isHacker', sort: 'asc' },
+      { label: 'Remarks', key: 'comment', field: 'comment', sort: 'asc' },
+    ],
+    rows: hackers,
+  }
+
   return (
     <div>
       <div className="my-3">
@@ -28,7 +40,6 @@ const HackerTable = ({ hackers }) => {
           Export CSV
         </CSVLink>
       </div>
-
       <table
         id="report"
         className=" table table-striped table-hover table-responsive table-auto"
@@ -68,8 +79,12 @@ const HackerTable = ({ hackers }) => {
                 <td className="border border-slate-700 rounded-md text-center">
                   {index + 1}
                 </td>
-                <td className="border border-slate-700 rounded-md text-center">
-                  {hacker.fbname}
+                <td className="border border-slate-700 rounded-md text-center ">
+                  <a href={hacker.fbLink} target="_blank">
+                    <span className="text-blue-500 font-medium">
+                      {hacker.fbname}
+                    </span>
+                  </a>
                 </td>
                 <td className="border border-slate-700 rounded-md text-center max-md:hidden">
                   {hacker.username}
@@ -124,7 +139,6 @@ const HackerTable = ({ hackers }) => {
           })}
         </tbody>
       </table>
-      {/* <MDBDataTable rows={hackers} /> */}
     </div>
   )
 }

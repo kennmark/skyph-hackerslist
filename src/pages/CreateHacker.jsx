@@ -7,6 +7,7 @@ import { URI } from '../UriRoute'
 
 const CreateHacker = () => {
   const [fbname, setFbname] = useState('')
+  const [fbLink, setFbLink] = useState('')
   const [username, setUsername] = useState('')
   const [position, setPosition] = useState('')
   const [group, setGroup] = useState('')
@@ -19,6 +20,7 @@ const CreateHacker = () => {
   const handleSaveHacker = () => {
     const data = {
       fbname,
+      fbLink,
       username,
       status,
       position,
@@ -53,6 +55,16 @@ const CreateHacker = () => {
             type="text"
             value={fbname}
             onChange={(e) => setFbname(e.target.value)}
+            className="border-2 border-gray-500 px-2 py-2 w-full"
+            required
+          />
+        </div>
+        <div className="my-4">
+          <label className="text-xl mr-4 text-gray-500">Fb Link</label>
+          <input
+            type="text"
+            value={fbLink}
+            onChange={(e) => setFbLink(e.target.value)}
             className="border-2 border-gray-500 px-2 py-2 w-full"
             required
           />

@@ -36,9 +36,11 @@ const ShowHacker = () => {
         <div className="flex flex-col border-2 border-sky-400 rounded-xl w-fit p-4">
           <div className="my-4">
             <span className="text-xl mr-4 text-gray-500">Facebook:</span>
-            <span className="text-xl mr-4 text-gray-500 font-bold">
-              {hacker.fbname}
-            </span>
+            <a href={hacker.fbLink}>
+              <span className="text-xl mr-4 text-gray-500 font-bold">
+                {hacker.fbname}
+              </span>
+            </a>
           </div>
           <div className="my-4">
             <span className="text-xl mr-4 text-gray-500">GC Name:</span>

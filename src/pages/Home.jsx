@@ -37,6 +37,12 @@ const Home = () => {
         >
           Table
         </button>
+        <Link to="/hackers/searchable-table">
+          <button className="bg-sky-300 hover:bg-sky-600 px-4 py-1 rounded-lg">
+            Searchable Data Table
+          </button>
+        </Link>
+
         <button
           className="bg-sky-300 hover:bg-sky-600 px-4 py-1 rounded-lg"
           onClick={() => setShowType('card')}
